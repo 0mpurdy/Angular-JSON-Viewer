@@ -1,3 +1,6 @@
-<p>
-  json-viewer works!
-</p>
+<h4>Input JSON here</h4>
+<span>Automatically add quotes on value names</span><input type="checkbox" [(ngModel)]="addQuotes" />
+<textarea [(ngModel)]="jsonText" style="width:100%; height:60vh;"></textarea>
+<div *ngIf="jsonParseError" class="alert alert-danger">
+  {{jsonParseError}}
+</div>
