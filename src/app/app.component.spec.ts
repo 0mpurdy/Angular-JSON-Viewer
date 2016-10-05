@@ -1,14 +1,21 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
+import { AngularJsonViewerRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
+import { JsonViewerComponent } from './json-viewer';
 
 describe('App: AngularJsonViewer', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        JsonViewerComponent
       ],
+      imports: [
+        AngularJsonViewerRoutingModule
+      ]
     });
   });
 
