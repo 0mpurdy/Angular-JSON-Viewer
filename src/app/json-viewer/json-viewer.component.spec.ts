@@ -12,7 +12,9 @@ describe('Component: JsonViewer', () => {
       imports: [
         FormsModule
       ],
-      declarations: []
+      declarations: [
+        JsonViewerComponent
+      ]
     });
   });
 
@@ -20,4 +22,38 @@ describe('Component: JsonViewer', () => {
     let component = new JsonViewerComponent();
     expect(component).toBeTruthy();
   });
+
+  it('should create the component', async(() => {
+    let fixture = TestBed.createComponent(JsonViewerComponent);
+    let jsonViewerComponent = fixture.debugElement.componentInstance;
+    expect(jsonViewerComponent).toBeTruthy();
+  }));
+
+  it('should have error hidden by default', async(() => {
+    let fixture = TestBed.createComponent(JsonViewerComponent);
+    fixture.detectChanges();
+    let compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#jsonParseError')).toBeFalsy;
+  }));
+
+  it('should show error when error text is added', async(() => {
+    let fixture = TestBed.createComponent(JsonViewerComponent);
+    let component = fixture.componentInstance;
+    component.jsonParseError = 'test error';
+    fixture.detectChanges();
+    let compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#jsonParseError')).toBeTruthy;
+    expect(compiled.querySelector('#jsonParseError').textContent).toEqual('test error');
+  }));
+
+  it('should default to adding quotes', async(() => {
+    let component = new JsonViewerComponent();
+    expect(component.addQuotes).toBe(true);
+  }));
+
+  it('should default to adding quotes', async(() => {
+    let component = new JsonViewerComponent();
+    expect(component.addQuotes).toBe(true);
+  }));
+  
 });

@@ -1,6 +1,6 @@
 <h4>Input JSON here</h4>
-<span>Automatically add quotes on value names</span><input type="checkbox" [(ngModel)]="addQuotes" />
+<input id="quotesCheckbox" type="checkbox" [(ngModel)]="addQuotes" />&nbsp;<span>Automatically add quotes on value names</span>
 <textarea [(ngModel)]="jsonText" style="width:100%; height:60vh;"></textarea>
 <div *ngIf="jsonParseError" class="alert alert-danger">
-  {{jsonParseError}}
+  <span id="jsonParseError">{{jsonParseError}}</span>
 </div>

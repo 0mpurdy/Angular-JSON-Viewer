@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JsonViewerComponent implements OnInit {
 
-  private addQuotes: boolean;
+  public addQuotes: boolean = true;
 
-  private jsonObject: string;
-  private jsonParseError: string;
+  public jsonObject: string;
+  public jsonParseError: string;
 
   constructor() { }
 
@@ -33,7 +33,7 @@ export class JsonViewerComponent implements OnInit {
         return;
       }
       catch (e) {
-        
+
       }
     }
 
